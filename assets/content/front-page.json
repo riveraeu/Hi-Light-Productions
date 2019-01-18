@@ -1,0 +1,27 @@
+{
+  "services": {
+    "Full Service": {
+      "icon": "/images/lights/full-service/set-up.svg",
+      "title": "Full Service", 
+      "text": "Our full-service option takes care of all your lighting needs and more. We work with you to plan the perfect lighting design for your event. Hi-Light also offers additional services such as audio, video, and staging."
+    },
+    "Consultation": {
+      "icon": "/images/lights/consultation/ideas.svg", 
+      "title": "Consultation",
+      "text": "Have an idea and want to talk it over with a professional, then our consultation service may be just what you're looking for. We sit down with you and give expert advice to achieve a stunning lighting design."
+    },
+    "Rentals": {
+      "icon": "/images/lights/rentals/cart.svg",
+      "title": "Rentals",
+      "text": "Just need some lights? Hi-Light has got you covered. We offer all the lights you will need to make your event shine! Simply pick out what you want and our team will work quickly to deliver the lights."
+    }
+  },
+  "eventsProductions": {
+    "title": "Events & Productions",
+    "text": "Here you can see some of the productions and events HiLight has already helped come alive. Ranging from shows and stages all around the Bay Area. Get inspired for your next event and see how HiLight and can help you!"
+  },
+  "about": {
+    "title": "About",
+    "text": "Whether you are in need of equipment for a backyard event or consulting and set up for a large scale production, we’ve got you covered. Currently based out of San Rafael, CA, the goal of HiLight Productions is, to bring thoughtful and affordable production elements to local artists and companies. When art thrives so does the humanity."
+  }
+}
