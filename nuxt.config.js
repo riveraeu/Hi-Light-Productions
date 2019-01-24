@@ -51,7 +51,8 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    // See https://github.com/nuxt-community/axios-module#options\
+    baseURL: process.env.NODE_ENV == 'production' ? 'https://thirsty-nightingale-cc5bcd.netlify.com' : 'http://localhost:3000'
   },
 
   /*
