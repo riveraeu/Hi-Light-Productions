@@ -1,18 +1,40 @@
 <template>
-  <v-flex v-on:mouseover="active = true" v-on:mouseleave="active =
-  false" class="box" sm6 text-xs-center>
-    <nuxt-link :to="{name: 'events-productions-focus', params: {focus: eventProd.context.custom.path}}">
-      <img :src="eventProd.secure_url" :alt="eventProd.context.custom.path">
-      <div v-show="active" class="image-overlay">
-        <h3 class="image-title sub-header display-1"> {{ eventProd.context.custom.title }}</h3>
+  <v-flex 
+    class="box"
+    sm5
+    text-xs-center
+    @mouseover="active = true"
+    @mouseleave="active = false">
+    <nuxt-link :to="{path: '/events-productions/'+eventProd.slug, params: {slug: eventProd.slug}}">
+      <VueResponsiveImage
+        :image-url="eventProd.url"
+        :alt="eventProd.slug"
+        :width-on-screen="50"
+        :width-on-screen-smartphone="100"
+        :image-class="'w-h-100'"
+      />
+      <div 
+        v-show="active" 
+        class="image-overlay">
+        <h3 class="text-md white--text image-title"> {{ eventProd.title }}</h3>
       </div>
     </nuxt-link>
   </v-flex>
 </template>
 
 <script>
+import VueResponsiveImage from "~/components/ResponsiveImage.vue"
+
 export default {
-  props: ['eventProd'],
+  components: {
+    VueResponsiveImage
+  },
+  props: {
+    eventProd: {
+      type: Object,
+      required: true
+    }
+  },
   data () {
     return {
       active: false

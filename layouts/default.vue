@@ -39,6 +39,9 @@ a {
   background: white;
 }
 /* typography */
+.text-xl {
+  font-size: 3.5rem;
+}
 .text-lg {
   font-size: 3rem;
 }

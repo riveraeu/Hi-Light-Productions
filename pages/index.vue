@@ -146,7 +146,7 @@ export default {
       margin: 0 auto;
     }
   }
-  @media (min-width: 1264px) {
+  @media (min-width: 1264px) and (min-height: 900px) {
     #hero-image {
       background-image: url("https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,w_2194/v1547598009/HiLightProduction/chris-barbalis-1283444-unsplash-min.jpg");
     }
