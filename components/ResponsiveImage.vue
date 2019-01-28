@@ -174,15 +174,19 @@ export default {
   },
   methods: {
     getSrcsetSizes (mode) {
-      switch (mode) {
+      switch(mode) {
         case 'tablet': // portrait
           return this.baseSizes.tabletPortrait
+          break;
         case 'smartphone':
           return this.baseSizes.smartphone
+          break;
         case 'mobile':
           return [...new Set([...this.baseSizes.tabletPortrait, ...this.baseSizes.smartphone])]
+          break;
         case 'desktop':
           return this.baseSizes.desktop
+          break;
         case 'all':
         default:
           return [...new Set([...this.baseSizes.desktop, ...this.baseSizes.tabletPortrait, ...this.baseSizes.smartphone])]

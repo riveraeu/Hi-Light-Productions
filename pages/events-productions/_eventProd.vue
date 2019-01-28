@@ -15,12 +15,14 @@
         v-for="(image, index) in eventProd.images" 
         :key="index"
         class="card">
-        <img 
-          v-lazy="image.src" 
-          :alt="index"
-          @click="openGallery(index)">
+        <VueResponsiveImage
+          :image-url="image.src"
+          :width-on-screen="50"
+          :width-on-screen-tablet="75"
+          :width-on-screen-smartphone="100"
+          @click.native="openGallery(index)"/>
       </div>
-      <Lightbox 
+      <LightBox 
         ref="lightbox"
         :images="eventProd.images"
         :show-light-box="false" 
@@ -30,13 +32,13 @@
 </template>
 
 <script>
-import Lightbox from 'vue-image-lightbox'
-
-require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
+import LightBox from "~/components/lightbox/LightBox.vue"
+import VueResponsiveImage from "~/components/ResponsiveImage.vue"
 
 export default {
   components: {
-    Lightbox
+    LightBox,
+    VueResponsiveImage
   },
   data () {
     return {
@@ -46,9 +48,9 @@ export default {
   methods: {
     openGallery (index) {
       this.$refs.lightbox.showImage(index)
-    }
+    },
   },
-  async asyncData ({ $axios, params, store }) {
+  async asyncData ({ $axios, params }) {
     try {
       const res = await $axios.$get(`/events-productions/${params.eventProd}.json`)
       return {eventProd: res}
@@ -71,20 +73,11 @@ export default {
   display: inline-block;
   cursor: pointer;
 }
-/* .lightbox {
-  z-index: 99 !important;
-  padding: 6rem 8rem !important;
-}
-.lightbox__image img,
-.lightbox__element {
-  height: 100% !important;
-} */
 @media (max-width: 960px) {
   .cards {
     column-count: 2;
   }
 }
-
 @media (max-width: 600px) {
   .cards {
     column-count: 1;
@@ -92,11 +85,8 @@ export default {
   .card {
     margin: 0 0 0;
   }
-  /* .lightbox {
-    padding: 2rem !important;
-  } */
 }
-img {
+.card >>> img {
   display: block;
   width: 100%;
 }
