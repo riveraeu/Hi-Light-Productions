@@ -46,6 +46,20 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'
   ],
+  generate: {
+    subFolders: false,
+    routes: function () {
+      return [
+        '/',
+        'about',
+        '/events-productions',
+        '/events-productions/rose-in-america',
+        '/events-productions/events',
+        '/events-productions/in-the-heights',
+        '/events-productions/the-amen-corner',
+      ]
+    }
+  },
   /*
   ** Axios module configuration
   */
