@@ -21,14 +21,20 @@ export default {
 </script>
 
 <style>
+/* custom classes */
+.card {
+  padding: 2rem 1rem;
+}
+.card img {
+  width: 5rem;
+}
 /* elements */
 a {
   text-decoration: none;
 }
-/* img {
+img {
   width: 100%;
-  height: 100%;
-} */
+}
 /* Sizing */
 .w-h-100{
   width: 100%;
@@ -112,6 +118,16 @@ a {
 }
 .primary {
   background-color: #FF9800;
+}
+
+/* SweetAlert */
+.swal2-title {
+  color: #9e9e9e !important;
+  font-family: 'lato', sans-serif !important;
+}
+.swal2-content {
+  font-family: 'roboto', sans-serif !important;
+  color: #9e9e9e !important;
 }
 
 /* responsive */

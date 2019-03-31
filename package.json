@@ -18,7 +18,8 @@
     "nuxt": "^2.0.0",
     "vue-image-lightbox": "^6.1.1",
     "vue-lazyload": "^1.2.6",
-    "vuetify": "^1.2.4"
+    "vue-sweetalert2": "^1.6.4",
+    "vuetify": "^1.5.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",

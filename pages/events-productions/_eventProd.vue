@@ -1,20 +1,23 @@
 <template>
   <v-container>
     <v-layout 
-      class="pb-5" 
+      class="pb-3" 
       text-xs-center 
       justify-center 
       row>
-      <v-flex md8>
-        <p class="primary--text lato line display-3 mt-5">{{ eventProd.title }}</p>
-        <div class="body-text mar-left mar-right"> {{ eventProd.text }}</div>
+      <v-flex 
+        xs12
+        sm10
+        lg8>
+        <p class="primary--text center lato line text-xl pt-3">{{ eventProd.title }}</p>
+        <div class="text-xs grey--text py-3"> {{ eventProd.text }}</div>
       </v-flex>
     </v-layout>
-    <div class="cards">
+    <div class="image-cards">
       <div  
         v-for="(image, index) in eventProd.images" 
         :key="index"
-        class="card">
+        class="image-card">
         <VueResponsiveImage
           :image-url="image.src"
           :width-on-screen="50"
@@ -62,31 +65,34 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+.image-cards {
   column-count: 3;
   column-gap: 1em;
 }
-.card {
+.image-card {
   margin: 0 0 1em;
   width: 100%;
   transition: all 100ms ease-in-out;
   display: inline-block;
   cursor: pointer;
 }
-@media (max-width: 960px) {
-  .cards {
+.image-card >>> img {
+  width: 100%;
+}
+@media (max-width: 1264px) {
+  .image-cards {
     column-count: 2;
   }
 }
 @media (max-width: 600px) {
-  .cards {
+  .image-cards {
     column-count: 1;
   }
-  .card {
+  .image-cards {
     margin: 0 0 0;
   }
 }
-.card >>> img {
+.image-cards >>> img {
   display: block;
   width: 100%;
 }

@@ -13,9 +13,13 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
+    script: [
+      { src: "https://cdn.emailjs.com/sdk/2.3.2/email.min.js" }
+    ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons|Lobster|Abril+Fatface|Anton' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons|Lobster|Abril+Fatface|Anton' },
+      { }
     ]
   },
 
@@ -44,7 +48,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'vue-sweetalert2/nuxt'
   ],
   generate: {
     subFolders: false,
@@ -52,11 +57,19 @@ module.exports = {
       return [
         '/',
         'about',
+        '/services/full-service',
+        '/services/consultation',
+        '/services/rentals',
+        '/services/cart',
         '/events-productions',
         '/events-productions/rose-in-america',
         '/events-productions/events',
         '/events-productions/in-the-heights',
         '/events-productions/the-amen-corner',
+        '/events-productions/peter-and-the-starcatcher',
+        '/events-productions/the-heathers',
+        '/events-productions/the-mystery-of-edwin-drood',
+        '/events-productions/this-is-our-youth'
       ]
     }
   },

@@ -4,9 +4,12 @@
       justify-center 
       text-sm-center 
       row>
-      <v-flex sm8>
+      <v-flex
+        xs12
+        sm10
+        lg8>
         <p class="primary--text center lato line text-xl pt-3">Events and Productions</p>
-        <p class="text-xs grey--text py-5">Hashtag helvetica celiac, occupy squid enamel pin vexillologist cardigan poutine taxidermy irony mixtape kitsch cold-pressed.
+        <p class="text-xs grey--text pa-3">Hashtag helvetica celiac, occupy squid enamel pin vexillologist cardigan poutine taxidermy irony mixtape kitsch cold-pressed.
         Cornhole pour-over vegan, hoodie humblebrag kombucha disrupt organic typewriter. Fixie yr vaporware irony hella trust fund cred kombucha tilde post-ironic. 
         Synth shabby chic trust fund knausgaard whatever microdosing. Prism tumblr selvage farm-to-table banjo. Post-ironic pour-over direct trade irony, drinking vinegar woke migas knausgaard meditation jianbing schlitz four loko ramps.</p>
       </v-flex>

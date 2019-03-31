@@ -1,7 +1,8 @@
 <template>
   <div class="">
     <v-toolbar
-      color="#010019" 
+      color="#010019"
+      dark
       fixed 
       app>
       <v-toolbar-side-icon 
@@ -18,6 +19,21 @@
       </v-toolbar-items>
       <v-spacer />
       <v-toolbar-items class="hidden-sm-and-down mr-0">
+        <v-menu :nudge-width="100">
+          <v-toolbar-title 
+            slot="activator">
+            <span>Services</span>
+            <v-icon dark>arrow_drop_down</v-icon>
+          </v-toolbar-title>
+          <v-list>
+            <v-list-tile
+              v-for="(service, index) in services"
+              :key="index"
+              :to="service.to">
+              <v-list-tile-title v-text="service.title" />
+            </v-list-tile>
+          </v-list>
+        </v-menu>
         <v-btn  
           v-for="(link, index) in navigation" 
           :key="index" 
@@ -27,7 +43,7 @@
         <v-icon left>{{ link.icon }}</v-icon>{{ link.title }}</v-btn>
         <v-btn 
           v-show="showCart"  
-          to="/lights/rentals/cart"
+          to="/services/cart"
           flat>
           <v-badge 
             right 
@@ -40,6 +56,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
+    <!-- Mobile Nav -->
     <v-navigation-drawer 
       v-model="drawer"
       dark
@@ -47,31 +64,41 @@
       fixed>
       <v-btn  
         v-show="showCart"
-        to="/lights/rentals/cart"
+        to="/services/cart"
         flat
-        class="mt-3"
-      >
+        class="mt-3">
         <v-badge overlap>
           <span slot="badge">{{ cartTotal }}</span>
           <v-icon large>shopping_cart</v-icon>
         </v-badge>
       </v-btn>
-      <v-divider />
-      <div 
-        v-for="(link, index) in navigation" 
-        :key="index">
-        <v-list-tile   
+      <v-list>
+        <v-list-group>
+          <template slot="activator">
+            <v-list-tile>
+              <v-list-tile-title>Services</v-list-tile-title>
+            </v-list-tile>
+          </template>
+          <v-list-tile
+            v-for="(service, i) in services"
+            :key="i"
+            :to="service.to">
+            <v-list-tile-content>
+              <v-list-tile-title>{{ service.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list-group>
+        <v-list-tile
+          v-for="(link, index) in navigation"
+          :key="index" 
           :to="link.to"
           avatar>
-          <v-list-tile-avatar>
-            <v-icon>{{ link.icon }}</v-icon>
-          </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title class="title">{{ link.title }}</v-list-tile-title>
+            <v-list-tile-title>{{ link.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-divider />
-      </div>
+      </v-list>
     </v-navigation-drawer>
   </div>
 </template>
@@ -82,9 +109,14 @@ export default {
     return {
       drawer: false,
       navigation: [
-        {title: 'Services', to: '/lights/services', icon: 'lightbulb_outline'},
+        // {title: 'Services', to: '/lights/services', icon: 'lightbulb_outline'},
         {title: 'Events & Productions', to: '/events-productions/', icon: 'wb_incandescent'},
         {title: 'About', to: '/about', icon: 'face'}
+      ],
+      services: [
+        {title: 'Full Service', to: '/services/full-service'},
+        {title: 'Consultation', to: '/services/consultation'},
+        {title: 'Rentals', to: '/services/rentals'}
       ]
     }
   },

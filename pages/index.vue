@@ -11,11 +11,11 @@
           color="#010019" 
           class="mt-3 white--text bold" 
           dark 
-          to="/lights/services">Get Started</v-btn>
+          to="/services/full-service">Get Started</v-btn>
       </div>
     </div>
     <v-container 
-      class="mt-5" 
+      class="mt-2" 
       fluid>
       <h1 class="primary--text center lato text-lg my-5">Services</h1>
       <v-layout 
@@ -27,17 +27,16 @@
           v-for="(service, index) in content.services" 
           :key="index"
           class="card"
-          md4>
+          xs12
+          sm8
+          md6
+          lg3>
           <img 
             :src="service.icon" 
             alt="service.title">
           <h2 class="text-sm grey--text py-3">{{ service.title }}</h2>
           <p class="text-xs grey--text">{{ service.text }}</p>
         </v-flex>
-        <v-btn
-          class="mb-5 mt-5" 
-          color="primary" 
-          to="/lights/services">Services</v-btn>
       </v-layout>
     </v-container>
     <v-container 
@@ -46,23 +45,29 @@
       <v-layout 
         row
         wrap
+        align-center
         justify-space-around>
-        <v-flex 
-          md4 
+        <v-flex
+          xs12
+          sm8
+          md6
+          lg4
           text-xs-center>
           <p class="primary--text center lato text-md mt-5">{{ content.eventsProductions.title }}</p>
           <p class="text-xs grey--text">{{ content.eventsProductions.text }}</p>
           <v-btn 
             class="my-5" 
-            to="/events-productions/gallery">View more</v-btn>
+            to="/events-productions/">View more</v-btn>
         </v-flex>
-        <v-flex 
-          md4
+        <v-flex
+          xs12
+          sm8
+          md6
           elevation-1>
           <VueResponsiveImage
             :image-url="'https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,%width%,%height%/v1524165567/HiLightProduction/The%20Heathers/heathers0.jpg'"
+            :image-ratio="5252/2688"
             :alt="'Heathers Production'"
-            :width-on-screen="50"
             :width-on-screen-tablet="75"
             :width-on-screen-smartphone="100"
             :image-class="'w-h-100'"
@@ -76,14 +81,19 @@
       <v-layout 
         row 
         wrap
-        justify-space-around>
+        justify-space-around
+        align-center>
         <v-flex 
-          class="vertical-align-2" 
+          class=""
+          xs12
+          sm8
           md4 
           text-xs-center>
           <v-icon x-large>highlight</v-icon><span class="anton primary--text text-md">Hi Light Productions</span>
         </v-flex>
-        <v-flex 
+        <v-flex
+          xs12
+          sm8
           md6 
           text-xs-center >
           <p class="primary--text center lato text-md mt-5">{{ content.about.title }}</p>
@@ -113,13 +123,7 @@ export default {
 }
 </script>
 
-<style scoped>
-  .card {
-    padding: 2rem 1rem;
-  }
-  .card img {
-    width: 5rem;
-  }
+<style>
   #hero-image {
     height: 90vh;
     background-image: url("https://res.cloudinary.com/rivera-web-solutions/image/upload/b_black,o_50,c_scale,w_663/v1547755669/HiLightProduction/chris-barbalis-1283444-unsplash-min.jpg");

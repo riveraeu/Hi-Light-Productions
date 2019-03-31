@@ -1,7 +1,10 @@
 <template>
   <v-flex 
     class="box"
-    sm5
+    xs12
+    sm6
+    md5
+    lg4
     text-xs-center
     @mouseover="active = true"
     @mouseleave="active = false">

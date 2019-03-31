@@ -12,7 +12,7 @@
         <h1 class="primary--text bold lato text-lg py-3">About</h1>
         <p class="text-sm medium grey--text">Founder of Hi Light Productions, Harrison Moye</p>
         <VueResponsiveImage
-          :image-url="'https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,%width%,%height%/v1547832935/HiLightProduction/headshot.jpg'"
+          :image-url="'https://res.cloudinary.com/rivera-web-solutions/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1547832935/HiLightProduction/headshot.jpg'"
           :alt="'picture of harrison'"
           :width-on-screen="50"
           :width-on-screen-tablet="75"
