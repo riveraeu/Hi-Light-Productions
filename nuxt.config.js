@@ -49,6 +49,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     'vue-sweetalert2/nuxt'
   ],
   generate: {
@@ -80,7 +81,10 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options\
     baseURL: process.env.NODE_ENV == 'production' ? 'https://thirsty-nightingale-cc5bcd.netlify.com' : 'http://localhost:3000'
   },
-
+  /* Proxy Module */
+  proxy: {
+    '/events-productions/': 'https://www.hilightproductions.com'
+  },
   /*
   ** Build configuration
   */
