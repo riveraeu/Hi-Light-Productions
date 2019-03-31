@@ -79,12 +79,12 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options\
-    baseURL: process.env.NODE_ENV == 'production' ? 'https://thirsty-nightingale-cc5bcd.netlify.com' : 'http://localhost:3000'
+    baseURL: process.env.NODE_ENV == 'production' ? 'https://www.hilightproductions.com' : 'http://localhost:3000'
   },
   /* Proxy Module */
-  proxy: {
-    '/events-productions/': 'https://www.hilightproductions.com'
-  },
+  // proxy: {
+  //   '/events-productions/': 'https://www.hilightproductions.com'
+  // },
   /*
   ** Build configuration
   */
